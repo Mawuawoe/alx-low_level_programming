@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * Main - Print the string in the sizeof function
+ * main - Print the string in the sizeof function
  *
  * Description: using the main function
  * this program give you the size of char you type in
