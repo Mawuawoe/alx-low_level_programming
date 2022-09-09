@@ -1,10 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - prints the strings in the func.
- * Discription: applying the main func.
+ * main - prints the strings in the put function
+ *
+ * Discription: using the main function
  * this C program print 'Programming is like building a multilingual puzzle'
- * return: 0 ie ending the program
+ * Return: 0
  */
 
 int main(void)
