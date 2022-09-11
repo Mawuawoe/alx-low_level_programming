@@ -3,7 +3,7 @@
  * main - print the alphabet in lower case
  *
  * Description: using the main function
- * this program prints the alphabet in lower case
+ * this program prints alphabets in lower cases
  * Return: 0
  */
 int main(void)
@@ -14,6 +14,6 @@ int main(void)
 	{
 		putchar(ch);
 	}
-	putchar(ch);
+	putchar('\n');
 	return (0);
 }
