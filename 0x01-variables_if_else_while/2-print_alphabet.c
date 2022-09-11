@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * main - print the alphabet in lower case 
+ * main - print the alphabet in lower case
  *
  * Description: using the main function
- * this program prints the alphabet
+ * this program prints the alphabet in lower case
  * Return: 0
  */
 int main(void)
@@ -14,6 +14,6 @@ int main(void)
 	{
 		putchar(ch);
 	}
-	putchar('\n');
+	putchar(ch);
 	return (0);
 }
