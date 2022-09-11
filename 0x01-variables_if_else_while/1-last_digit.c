@@ -2,10 +2,10 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - print the last number of the random number asigned to n
+ * main - prints the last digit of the random number n
  *
  * Description: using the main function
- * this program prints the last number and a comment for the random number n
+ * prints the last digit of the random number n
  * Return: 0
  */
 int main(void)
@@ -17,13 +17,13 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	l = n % 10;
 
-	if (l > 5)
+	if (1 > 5)
 	{
-		printf("Last digit of %d is %d and is greater than 5\n", n, l);
+		printf("last digit of %d is %d and is greater than 5\n", n, l);
 	}
 	else if (l == 0)
 	{
-		printf("Last digit of %d is %d and is 0\n", n, l);
+		printf("last digit of %d is %d and is 0\n", n, l);
 	}
 	else
 	{
