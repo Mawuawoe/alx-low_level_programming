@@ -4,6 +4,7 @@
  *
  * Description: using the main function
  * this program prints 0 to 9 with , and space
+ * Return: 0
  */
 int main(void)
 {
