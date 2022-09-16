@@ -2,17 +2,16 @@
 
 /**
  * largest_number - return the largest of 3 numbers
+ * Description: using the main function
  * @a: first int
  * @b: second int
  * @c: third int
- * Descripion: using the main.h file
  * Return: largest number
  */
 
 int largest_number(int a, int b, int c)
 {
 	int largest;
-
 	if (a >= b && a >= c)
 	{
 		largest = a;
