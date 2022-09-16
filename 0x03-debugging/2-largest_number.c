@@ -2,7 +2,6 @@
 
 /**
  * largest_number - return the largest of 3 numbers
- * Description: using the main function
  * @a: first int
  * @b: second int
  * @c: third int
