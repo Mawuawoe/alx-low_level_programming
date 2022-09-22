@@ -1,44 +1,46 @@
-#include "main.h"
+#include "main.hhh"
 
 /**
- * rot13 - encodes a string using rot13
+ * rot13 - rot13 encoder
  * @str: string to be encoded
- * Return: encoded string
+ *
+ * Return: address of the encoded string
  */
 
 char *rot13(char *str)
 {
-	int index1, index2;
+	int i = 0;
 
-	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-	       									'G', 'H', 'I', 'J', 'K', 'L',
-									       	'M', 'N', 'O', 'P', 'Q', 'R', 
-										'S', 'T', 'U', 'V', 'W', 'X', 
-										'Y', 'Z', 'a', 'b', 'c', 'd', 
-										'e', 'f', 'g', 'h', 'i', 'j', 
-										'k', 'l', 'm', 'n', 'o', 'p', 
-										'q', 'r', 's', 't', 'u', 'v', 
-										'w', 'x', 'y', 'z'};
-
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S', 
-										'T', 'U', 'V', 'W', 'X', 'Y', 
-										'F', 'G', 'H', 'I', 'J', 'K', 
-										'L', 'M', 'n', 'o', 'p', 'q', 
-										'r', 's', 't', 'u', 'v', 'w', 
-										'x', 'y', 'z', 'a', 'b', 'c', 
-										'd', 'e', 'f', 'g', 'h', 'i', 
-										'j', 'k', 'l', 'm'};
-
-	while (str[++index1])
+	while (str[i] != '\0')
 	{
-		for (index2 = 0; index2 < 52; index2++)
-		{
-			if (str[index1] == alphabet[index2])
-			{
-				str[index] = rot13key[index2];
-				break;
-			}
-		}
+		str[i] = transform_2(str[i]);
+		i++;
 	}
 	return (str);
+}
+
+/**
+ * transform_2 - helper function to map a letter with its rot13 encodeing
+ * @x: char to be encoded
+ *
+ * Return: the encoded char
+ */
+
+char transform_2(char X)
+{
+	char one[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char two[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i = 0;
+	char replacement = X;
+
+	while (i < 52)
+	{
+		if (X == one[i])
+		{
+			replacement = two[i];
+			break;
+		}
+		i++;
+	}
+	return (replacement);
 }
