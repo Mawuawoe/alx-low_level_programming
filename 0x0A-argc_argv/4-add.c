@@ -8,7 +8,7 @@
  * @argv: argumnets vector of pointers to strings
  * Return: 0 if no errors, else 1
  */
-int main(int argc, char *ardv[])
+int main(int argc, char *argv[])
 {
 	int a = 0, i, j;
 
