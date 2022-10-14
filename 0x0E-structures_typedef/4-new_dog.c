@@ -11,7 +11,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	int nl, ol, i;
 
-	struct dog *n_dog = NULL
+	struct dog *n_dog = NULL;
 
 	nl = 0
 	while (name[nl] != '\0')
