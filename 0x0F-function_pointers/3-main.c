@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	int a = 0, b = 0, res = 0;
 	char s;
 
-	if (argv != 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
@@ -35,4 +35,5 @@ int main(int argc, char *argv[])
 	res = (get_op_func(argv[2]))(a, b);
 	printf("%d\n", res);
 	return (0);
+}
 
