@@ -15,20 +15,21 @@ size_t print_list(const list_t *h)
     {
         return(0);
     }
-    while(temp != NULL)
+    while(temp->next != NULL)
     {
         if (temp->str == NULL)
         {
-            printf("[%u] %s\n", h->len, "(nill)");
+            printf("[%u] %s\n", temp->len, "(nill)");
         }
         else
         {
-            printf("[%u] %s\n", h->len, h->str);
+            printf("[%u] %s\n", temp->len, temp->str);
         }
 
         i ++;
         temp = temp->next;
     }
+    printf("[%u] %s\n", temp->len, temp->str);
 
     return(i);
 }
