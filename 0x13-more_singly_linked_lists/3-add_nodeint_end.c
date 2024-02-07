@@ -1,5 +1,4 @@
 #include"lists.h"
-
 /**
  * add_nodeint_end - a function that add nodes to the end of list
  * @head: pointer pointing to head
@@ -19,7 +18,6 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
         return(NULL);
     }
     newNode->n = n;
-
     if (*head == NULL) /*check if list is empty*/
     {
         newNode->next = NULL;
