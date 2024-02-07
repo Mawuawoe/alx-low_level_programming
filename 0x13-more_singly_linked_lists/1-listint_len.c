@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * list_len - function that return the number of element in list
+ * listint_len - function that counts the number of element in list
  * @h: head of the list
  * Return: total number of elements/nodes in the list
 */
