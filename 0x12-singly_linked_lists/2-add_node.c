@@ -1,9 +1,10 @@
 #include "lists.h"
 
 /**
- * *add_nodes - function that add a new node to the begin of a linked list
+ * add_nodes - function that add a new node to the begin of a linked list
  * @head: head of the list
  * @str: sting to be added
+ * Description : add_nodes add nodes to the begin
  * Return: the address of the new node or NULL if it fails
 */
 
