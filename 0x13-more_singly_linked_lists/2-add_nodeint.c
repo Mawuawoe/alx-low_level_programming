@@ -13,6 +13,10 @@ listint_t *add_nodeint(listint_t **head, const int n)
     newNode = (listint_t *)malloc(sizeof(listint_t));
     /*malloc can fail so we check if newnode is null*/
     /*anytime malloc fails it returns null*/
+    if (head == NULL)
+    {
+        return(NULL);
+    }
     if (newNode == NULL)
     {
         return(NULL);
