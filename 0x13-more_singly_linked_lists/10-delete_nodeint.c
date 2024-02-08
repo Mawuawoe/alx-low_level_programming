@@ -34,9 +34,16 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
         }
         else
         {
+            if (temp->next == NULL)
+            {
+                prevNode->next = NULL;
+            }
+            else
+            {
+                prevNode->next = temp->next;
+            }
             /*you exit the loop with Prevnode and temp your current node*/
             /*reassign last but one node to point to the  node after the one to delete*/
-            prevNode->next = temp->next;
             free(temp);
         }
     }
