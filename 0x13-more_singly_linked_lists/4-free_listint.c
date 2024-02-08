@@ -9,13 +9,14 @@ void free_listint(listint_t *head)
 {
     listint_t *temp;
     
-    /*if(head == NULL) then link is an empty link list*/
-   /* {
+    if(head == NULL) /*then link is an empty link list*/
+    {
         return;
-    }*/
+    }
     while((temp = head) != NULL)
     {
         head = head->next;
         free(temp);
     }
+    free(head);
 }
