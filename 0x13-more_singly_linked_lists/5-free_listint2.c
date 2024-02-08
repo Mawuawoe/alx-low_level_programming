@@ -11,7 +11,7 @@ void free_listint2(listint_t **head)
     listint_t *nextNode;
     curNode = *head;
 
-    if(*head == NULL) /*then link is an empty link list*/
+    if(head==NULL || *head == NULL) /*then link is an empty link list*/
     {
         return;
     }
