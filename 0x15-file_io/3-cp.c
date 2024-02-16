@@ -7,7 +7,7 @@
  * Return: nothing
 */
 
-/*void error (int file_to, int file_from, char *argv[])
+void error (int file_to, int file_from, char *argv[])
 {
     if (file_from == -1)
     {
@@ -19,7 +19,7 @@
         dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
         exit(99);
     }
-}*/
+}
 
 /**
  * main - program to copy content of one file to another
@@ -44,8 +44,8 @@ int main(int argc, char *argv[])
     }
     file_from = open(argv[1], O_RDONLY);
     file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-    /*error(file_from, file_to, argv);*/
-    if (file_from == -1)
+    error(file_from, file_to, argv);
+    /*if (file_from == -1)
     {
         dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
         exit(98);
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     {
         dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
         exit(99);
-    }
+    }*/
     numread = 1024;
     while(numread == 1024)
     {
@@ -90,8 +90,4 @@ int main(int argc, char *argv[])
         exit(100);
     }
     return(0);
-
-
-
-
 }
