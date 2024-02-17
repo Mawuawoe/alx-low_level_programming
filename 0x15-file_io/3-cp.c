@@ -11,12 +11,12 @@ void error (int file_to, int file_from, char *argv[])
 {
     if (file_from == -1)
     {
-        dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
         exit(98);
     }
     if (file_to == -1)
     {
-        dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+        dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
         exit(99);
     }
 }
@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 
     ssize_t numread;
     ssize_t numwr;
+    ssize_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
     char *buf[1024];
 
     if(argc != 3)
@@ -43,7 +44,7 @@ int main(int argc, char *argv[])
         exit(97);
     }
     file_from = open(argv[1], O_RDONLY);
-    file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+    file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
     error(file_from, file_to, argv);
     /*if (file_from == -1)
     {
@@ -63,7 +64,7 @@ int main(int argc, char *argv[])
         {
             /*error_file(-1,0,argv);*/
             {
-                dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+                dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
                 exit(98);
             }
         }
@@ -72,7 +73,7 @@ int main(int argc, char *argv[])
         {
             /*error_file(0,-1,argv);*/
             {
-                dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+                dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
                 exit(99);
             }
         }
