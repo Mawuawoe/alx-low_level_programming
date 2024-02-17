@@ -1,13 +1,13 @@
 #include "main.h"
 /**
  * error - chech if a file is open and handle errors
- * @file_from: the file we are copying from
- * @file_to: the file we are copyng to
- * @argv: argument vector
+ * file_from: the file we are copying from
+ * file_to: the file we are copyng to
+ * argv: argument vector
  * Return: nothing
 */
 
-void error (int file_to, int file_from, char *argv[])
+/*void error (int file_to, int file_from, char *argv[])
 {
     if (file_from == -1)
     {
@@ -19,7 +19,7 @@ void error (int file_to, int file_from, char *argv[])
         dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
         exit(99);
     }
-}
+}*/
 
 /**
  * main - program to copy content of one file to another
@@ -44,18 +44,18 @@ int main(int argc, char *argv[])
         exit(97);
     }
     file_from = open(argv[1], O_RDONLY);
-    file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
-    error(file_from, file_to, argv);
-    /*if (file_from == -1)
+    if (file_from == -1)
     {
         dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
         exit(98);
     }
+    file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
+    /*error(file_from, file_to, argv);*/
      if (file_to == -1)
     {
         dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
         exit(99);
-    }*/
+    }
     numread = 1024;
     while(numread == 1024)
     {
