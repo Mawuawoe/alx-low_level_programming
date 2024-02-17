@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     numread = 1024;
     while(numread == 1024)
     {
-        numread = read(file_from, buf, 1024-1);
+        numread = read(file_from, buf, 1024);
         if(numread == -1)
         {
             /*error_file(-1,0,argv);*/
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
                 exit(98);
             }
         }
-        numwr = write(file_to, buf, 1024-1);
+        numwr = write(file_to, buf, numread);
         if(numwr == -1)
         {
             /*error_file(0,-1,argv);*/
