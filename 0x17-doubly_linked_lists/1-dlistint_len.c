@@ -13,6 +13,10 @@ if(h == NULL)
 {
 return num_Nodes;
 }
+while(h->prev != NULL)
+{
+h = h->prev;
+}
 while (ptr != NULL)
 {
 num_Nodes++;
