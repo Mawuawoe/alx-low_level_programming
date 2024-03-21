@@ -10,6 +10,10 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 dlistint_t *temp;
 dlistint_t *h;
 temp = malloc(sizeof(dlistint_t));
+if (temp == NULL)
+{
+return (NULL);
+}
 temp->prev = NULL;
 temp->n = n;
 temp->next = NULL;
