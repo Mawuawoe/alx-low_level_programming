@@ -29,10 +29,10 @@ break;
 temp = temp->next;
 i++;
 }
+if (i != idx)
+return (NULL);
 if (temp->next == NULL)
-{
 new_Node = add_dnodeint_end(h, n);
-}
 else
 {
 new_Node = malloc(sizeof(dlistint_t));
