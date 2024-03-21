@@ -29,7 +29,7 @@ break;
 temp = temp->next;
 i++;
 }
-if (i != idx)
+if (i != idx - 1)
 return (NULL);
 if (temp->next == NULL)
 new_Node = add_dnodeint_end(h, n);
