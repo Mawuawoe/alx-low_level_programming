@@ -13,17 +13,12 @@ dlistint_t *new_Node;
 dlistint_t *temp;
 dlistint_t *temp2;
 unsigned int i;
-new_Node = malloc(sizeof(dlistint_t));
-if (new_Node == NULL)
-return (NULL);
-new_Node->n = n;
-new_Node->prev = NULL;
-new_Node->next = NULL;
-temp = *h;
+new_Node = NULL;
 if (idx == 0)
-{
 new_Node = add_dnodeint(h, n);
-}
+else
+{
+temp = *h;
 i = 0;
 while (temp != NULL)
 {
@@ -36,16 +31,21 @@ i++;
 }
 if (temp->next == NULL)
 {
-temp->next = new_Node;
-new_Node->prev = temp;
+new_Node = add_dnodeint_end(h, n);
 }
 else
 {
+new_Node = malloc(sizeof(dlistint_t));
+if (new_Node != NULL)
+{
+new_Node->n = n;
 temp2 = temp->next;
 temp->next = new_Node;
 temp2->prev = new_Node;
 new_Node->next = temp2;
 new_Node->prev = temp;
+}
+}
 }
 return (new_Node);
 }
