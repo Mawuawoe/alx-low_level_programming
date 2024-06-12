@@ -1,8 +1,8 @@
-
 #!/usr/bin/python3
 """
 Module that returns the perimeter of the island described in grid
 """
+
 
 def water_neighbors(grid, i, j):
     """
